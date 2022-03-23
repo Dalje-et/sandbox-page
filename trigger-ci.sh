@@ -6,4 +6,5 @@ else
     echo "hello world" | tee test.txt
 fi
 
-git commit -a -m "trigger CI" && git push origin main
+git add tst.txt;
+git commit -m "trigger CI" && git push origin main
