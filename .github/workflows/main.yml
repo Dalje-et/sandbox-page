@@ -1,7 +1,6 @@
-name: Deploy to Netlify on commits to main
-on:
-  push:
-    branches: [main]
+name: Publish on Netlify
+on: push
+
 jobs:
   publish:
     runs-on: ubuntu-latest
