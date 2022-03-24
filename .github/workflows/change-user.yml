@@ -1,0 +1,19 @@
+name: Commit date to master
+on: push
+jobs:
+  date:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: save current date
+        run: date > date.log
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+      - name: commit
+        run: |
+          git add date.log
+          git commit -m "new commit message"
+          git push origin master
